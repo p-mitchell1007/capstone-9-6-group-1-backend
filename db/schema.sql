@@ -4,12 +4,11 @@ CREATE DATABASE reflections;
 
 \c reflections;
 
-DROP TABLE IF EXISTS _posts
+DROP TABLE IF EXISTS posts;
 
-CREATE TABLE _posts (
-  id INTEGER PRIMARY KEY,
-  user_id INTEGER REFERENCES Users(id),
-  post_made DATE,
-  title TEXT,
-  content TEXT
+CREATE TABLE posts (
+    id SERIAL PRIMARY KEY,
+    post_created TIMESTAMP,
+    title VARCHAR(200),
+    content TEXT
 );
