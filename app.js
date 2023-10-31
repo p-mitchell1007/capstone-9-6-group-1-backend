@@ -8,10 +8,18 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 
+/* - - - CONTROLLERS - - - */
+const postsController = require("./controllers/postsController");
+
+/* - - - ROUTES - - - */
+
+app.use("/posts", postsController);
+
 app.get("/", (req, res) => {
   return res.send("Welcome To Reflections");
 });
 
+/* - - - 404 - - - */
 app.get("*", (req, res) => {
   return res.status(404).json({
     Error: "GET request unsuccessful.",
