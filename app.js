@@ -10,10 +10,12 @@ app.use(morgan("dev"));
 
 /* - - - CONTROLLERS - - - */
 const postsController = require("./controllers/postsController");
+const commentsController = require("./controllers/commentsController"); 
 
 /* - - - ROUTES - - - */
 
 app.use("/posts", postsController);
+app.use("/comments", commentsController);
 
 app.get("/", (req, res) => {
   return res.send("Welcome To Reflections");
@@ -28,3 +30,4 @@ app.get("*", (req, res) => {
 });
 
 module.exports = app;
+
