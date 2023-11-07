@@ -6,7 +6,6 @@ const {
     addComment
 } = require("../queries/commentsQueries");
 
-// Get all comments for a specific post
 router.get("/:post_id", async (req, res) => {
     const post_id = req.params.post_id;
 
@@ -24,7 +23,6 @@ router.get("/:post_id", async (req, res) => {
     }
 });
 
-// Add a new comment to a post
 router.post("/:post_id", async (req, res) => {
     const post_id = req.params.post_id;
     const { user_id, comment_made, content } = req.body;
