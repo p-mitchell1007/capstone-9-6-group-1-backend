@@ -21,6 +21,12 @@ VALUES
   ( 1, 4, '2023-11-05', 'Getting enough rest and support from your partner is crucial during this time.'),
   ( 3, 2, '2023-11-06', 'I’m a family counselor, and I can help with family-related issues as well. Feel free to reach out.');
 
+INSERT INTO articles (title, author, creation_date, article_preview)
+VALUES
+  ( '6 Tips For Managing The 4th Trimester & Postpartum Depression', 'SydneyP', '2023-05-08', 'The journey of motherhood is a miraculous and life-changing experience. However, it can also bring forth unexpected challenges that can impact the well-being of both the mother and their newborn. One crucial yet often overlooked stage is the 4th trimester, where postpartum depression can emerge as a significant concern...'),
+  ( 'Postpartum Depression', 'MyaC', '2023-07-15', 'Your body and mind go through many changes during and after pregnancy. If you feel sad, anxious, or overwhelmed...'),
+  ( 'Postpartum Depression: Causes, Symptoms & Treatment', 'SaraN', '2022-10-17', 'Postpartum depression is a type of depression that happens after having a baby. It affects up to 15% of people...'),
+  ('What are the types of postpartum depression?', 'LucyH', '2022-12-12', 'There are three different types of postpartum mood disorders...');
 
 
 

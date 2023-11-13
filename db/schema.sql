@@ -62,5 +62,5 @@ CREATE TABLE articles (
     title VARCHAR (255) NOT NULL,
     author TEXT,
     article_preview TEXT,
-    creation_date DATE CHECK (creation_date <= CURRENT_DATE)
+    creation_date DATE CHECK (creation_date <= CURRENT_DATE),
 );
