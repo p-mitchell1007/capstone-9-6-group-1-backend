@@ -39,21 +39,6 @@ CREATE TABLE comments (
   content VARCHAR
 );
 
--- DROP TABLE IF EXISTS users;
-
--- CREATE TABLE users (
---   id INTEGER PRIMARY KEY,
---   fname TEXT,
---   lname TEXT,
---   email TEXT,
---   phone VARCHAR(15),
---   user_id INTEGER REFERENCES Users(id),
---   city VARCHAR(50),
---   homestate VARCHAR(50),
---   password_hash VARCHAR(255),
---   profile_img TEXT,
---   created_at TIMESTAMP DEFAULT
--- );
 
 DROP TABLE IF EXISTS articles;
 
