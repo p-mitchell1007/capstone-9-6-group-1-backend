@@ -31,8 +31,8 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  const { title, author, article_preview, creation_date } = req.body;
-  const newArticle = await createArticle(title, author, article_preview, creation_date);
+  const { title, author, creation_date, article_preview} = req.body;
+  const newArticle = await createArticle(title, author, creation_date, article_preview);
 
   if (newArticle instanceof Error) {
     return res.status(500).json({ error: 'Error creating article' });
@@ -43,8 +43,8 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
   const articleId = req.params.id;
-  const { title, author, article_preview, creation_date } = req.body;
-  const updatedArticle = await updateArticle(articleId, title, author, article_preview, creation_date);
+  const { title, author, creation_date, article_preview } = req.body;
+  const updatedArticle = await updateArticle(articleId, title, author, creation_date, article_preview);
 
   if (updatedArticle instanceof Error) {
     return res.status(500).json({ error: 'Error updating article' });

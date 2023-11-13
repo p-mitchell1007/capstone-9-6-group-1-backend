@@ -1,9 +1,16 @@
-# capstone-9-6-group-1-backend
+# Reflections-backend
 
-An application that allows expecting/current parents and professional counselors to come together. It helps you connect with other expecting/current parents through a chat/forum, has addition resources for parent dealing with stress, postpartum depression, and other related issues that come with having a family. It also provides users with therapists to work with for effectively dealing with postpartum issues.
+<p align="center">
+<img src="./reflections-logo/Reflections-logo.png" alt="reflections logo" style="width:300px;"/>
+</p>
 
-Group 1
+An application that allows expecting/current parents to come together and connect with eachother through a chat/forum. It also has additional resources for parents dealing with stress, postpartum depression, and other related issues that come with having a family. It provides users with therapists in the area to work with for effectively dealing with postpartum or any other mental health issues.
 
-Blanca
-Monir Hossen
-Phillip Mitchell
+
+
+### The developers
+[Blanca Altamirano](https://github.com/winterbelle)
+<br>
+[Monir Hossen](https://github.com/monir9h)
+<br>
+[Phillip Mitchell](https://github.com/p-mitchell1007)

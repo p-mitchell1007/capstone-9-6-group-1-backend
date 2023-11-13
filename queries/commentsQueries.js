@@ -11,7 +11,7 @@ const getAllComments = async () => {
 
 const getCommentById = async (commentId) => {
   try {
-    const comment = await db.one('SELECT * FROM comments WHERE id = $1', commentId);
+    const comment = await db.one('SELECT * FROM comments WHERE id = 1', commentId);
     return comment;
   } catch (error) {
     throw error;
@@ -20,7 +20,7 @@ const getCommentById = async (commentId) => {
 
 const createComment = async (text, postId) => {
   try {
-    const newComment = await db.one('INSERT INTO comments (text, post_id) VALUES ($1, $2) RETURNING *', [text, postId]);
+    const newComment = await db.one('INSERT INTO comments (user_id, post_id, content) VALUES ($2, $3, $4) RETURNING *', [text, postId]);
     return newComment;
   } catch (error) {
     throw error;
@@ -29,7 +29,7 @@ const createComment = async (text, postId) => {
 
 const updateComment = async (commentId, text) => {
   try {
-    const updatedComment = await db.one('UPDATE comments SET text = $1 WHERE id = $2 RETURNING *', [text, commentId]);
+    const updatedComment = await db.one('UPDATE comments SET content = $1 WHERE id = $2 RETURNING *', [text, commentId]);
     return updatedComment;
   } catch (error) {
     throw error;

@@ -18,18 +18,18 @@ const getArticleById = async (articleId) => {
   }
 };
 
-const createArticle = async (title, author, article_preview, creation_date) => {
+const createArticle = async (title, author, creation_date, article_preview) => {
   try {
-    const newArticle = await db.one('INSERT INTO articles (title, author, article_preview, creation_date) VALUES ($1, $2, $3, $4) RETURNING *', [title, author, article_preview, creation_date]);
+    const newArticle = await db.one('INSERT INTO articles (title, author, creation_date, article_preview) VALUES ($1, $2, $3, $4) RETURNING *', [title, author, creation_date, article_preview]);
     return newArticle;
   } catch (error) {
     throw error;
   }
 };
 
-const updateArticle = async (articleId, title, author, article_preview, creation_date) => {
+const updateArticle = async (articleId, title, author, creation_date, article_preview) => {
   try {
-    const updatedArticle = await db.one('UPDATE articles SET title = $2, author = $3, article_preview = $4, creation_date = $5 WHERE id = $1 RETURNING *', [articleId, title, author, article_preview, creation_date]);
+    const updatedArticle = await db.one('UPDATE articles SET title = $2, author = $3, creation_date = $4, article_preview = $5 WHERE id = $1 RETURNING *', [articleId, title, author, creation_date, article_preview]);
     return updatedArticle;
   } catch (error) {
     throw error;

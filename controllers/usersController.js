@@ -1,4 +1,3 @@
-
 const express = require('express');
 const router = express.Router();
 
@@ -6,7 +5,7 @@ const {
   getAllUsers,
   getUserById,
   createUser,
-} = require('../queries/usersQueries'); 
+} = require('../queries/userQueries'); 
 router.get('/', async (req, res) => {
   const users = await getAllUsers();
 
