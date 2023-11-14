@@ -9,6 +9,15 @@ const getAllComments = async () => {
   }
 };
 
+const getCommentsByPostId = async (postId) => {
+  try {
+    const comments = await db.any('SELECT * FROM comments WHERE post_id = $1', postId);
+    return comments;
+  } catch (error) {
+    throw error;
+  }
+};
+
 const getCommentById = async (commentId) => {
   try {
     const comment = await db.one('SELECT * FROM comments WHERE id = 1', commentId);
@@ -46,6 +55,7 @@ const deleteComment = async (commentId) => {
 
 module.exports = {
   getAllComments,
+  getCommentsByPostId,
   getCommentById,
   createComment,
   updateComment,

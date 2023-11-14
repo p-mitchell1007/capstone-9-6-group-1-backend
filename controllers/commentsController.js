@@ -3,17 +3,17 @@ const router = express.Router();
 
 const {
     getAllComments,
+    getCommentsByPostId,
     addComment,
 } = require('../queries/commentsQueries');
 
-/* I'm able to load the comments table and data on to the browser but I have to add an
-id after comment (ex: localhost://3345/comments/1). The id is suppost to be a post id 
-according to the info below but I am able to see the comments for all posts. */
+/* displays the comments for specific post. */
 router.get('/:post_id', async (req, res) => {
     const post_id = req.params.post_id;
-
+    console.log("running get request");
+    console.log(post_id);
     try {
-        const comments = await getAllComments(post_id);
+        const comments = await getCommentsByPostId(post_id);
 
         if (!Array.isArray(comments)) {
             return res.status(500).json({ error: 'Server Error. Please Try Again.' });
