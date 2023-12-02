@@ -49,32 +49,33 @@
 
 // module.exports = app;
 
-
 const express = require('express');
+const app = express();
 const router = express.Router();
-const { createUser, createUserProfile } = require('../path-to-your-functions'); // Update the path accordingly
-
 
 // /* - - - CONTROLLERS - - - */
 const postsController = require('./controllers/postsController');
 const commentsController = require('./controllers/commentsController');
 const articlesController = require('./controllers/articlesController');
-const createProfileController = require('./controllers/createProfileController');
+const createProfileController = require('./controllers/createProfileController.js');
 
-app.use('/create-profile', createProfileController);
+// Use router.use instead of app.use
+router.use('/create-profile', createProfileController);
 
 // /* - - - ROUTES - - - */
-app.use('/posts', postsController);
-app.use('/comments', commentsController);
-app.use('/articles', articlesController);
-// Add a new route to create a user and user profile
+router.use('/posts', postsController);
+router.use('/comments', commentsController);
+router.use('/articles', articlesController);
+
+// Define a route for the root path
+router.get('/', (req, res) => {
+  res.send('Hello, this is the root path!');
+});
+
 router.post('/create-user-profile', async (req, res) => {
   try {
-    // Extracting required data from the request body
     const { fname, lname, email, phone, city, homestate, profile_img, name, age, reasonForJoining } = req.body;
-    // Creating a new user using createUser function
     const newUser = await createUser(fname, lname, email, phone, city, homestate, profile_img);
-    // Creating a new user profile using createUserProfile function
     const newUserProfile = await createUserProfile(name, age, reasonForJoining);
 
     res.status(201).json({
@@ -88,7 +89,10 @@ router.post('/create-user-profile', async (req, res) => {
   }
 });
 
-module.exports = router;
+module.exports = { app, router };
+
+
+
 
 
 

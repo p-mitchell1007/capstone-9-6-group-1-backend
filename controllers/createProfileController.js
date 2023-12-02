@@ -1,4 +1,7 @@
+
+const express = require('express');
 const axios = require('axios');
+const router = express.Router();
 
 const getRandomUserData = async () => {
   try {
@@ -41,9 +44,11 @@ const createUserProfileWithRandomData = async () => {
   }
 };
 
-createUserProfileWithRandomData()
-  .then(result => console.log(result))
-  .catch(error => console.error(error));
+// createUserProfileWithRandomData()
+//   .then(result => console.log(result))
+//   .catch(error => console.error(error));
+
+module.exports = router;
 
 
 
