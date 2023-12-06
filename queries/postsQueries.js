@@ -22,17 +22,17 @@ const getPostByPostId = async (postId) => {
 };
 
 /* --- QUERY TO UPDATE A POST --- */
-// const updatePost = async (id, userId, postMade, title, content) => {
-//   try {
-//     const updatedPost = await db.one(`UPDATE posts 
-//       SET user_id = $2, post_made = $3, title = $4, 
-//       content = $5) WHERE id = $1 RETURNING * `,
-//       [userId, postMade, title, content]);
-//     return updatedPost;
-//   } catch (error) {
-//     return error;
-//   }
-// };
+ const updatePost = async (id, userId, postMade, title, content) => {
+  try {
+    const updatedPost = await db.one(`UPDATE posts 
+      SET user_id = $2, post_made = $3, title = $4, 
+       content = $5) WHERE id = $1 RETURNING * `,
+      [userId, postMade, title, content]);
+           return updatedPost;
+  } catch (error) {
+    return error;
+  }
+ };
 
 /* --- QUERY TO CREATE A NEW POSTS --- */
 const createPost = async (userId, postMade, title, content) => {
@@ -63,5 +63,23 @@ module.exports = {
   getPostByPostId,
   createPost,
   deletePost,
-  // updatePost
+  updatePost
 };
+
+
+// //postsQueries.js
+
+// const db = require("../db/dbConfig.js");
+
+// const getAllPosts = async () => {
+//   try {
+//     const allPosts = await db.any("SELECT * FROM posts");
+//     return allPosts;
+//   } catch (e) {
+//     return e;
+//   }
+// };
+
+// module.exports = {
+//   getAllPosts,
+// };
