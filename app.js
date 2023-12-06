@@ -51,28 +51,33 @@
 
 const express = require('express');
 const app = express();
-const router = express.Router();
 
-// /* - - - CONTROLLERS - - - */
-const postsController = require('./controllers/postsController');
-const commentsController = require('./controllers/commentsController');
-const articlesController = require('./controllers/articlesController');
-const createProfileController = require('./controllers/createProfileController.js');
+/* - - - CONTROLLERS - - - */
 
-// Use router.use instead of app.use
-router.use('/create-profile', createProfileController);
+const postsController = require("./controllers/postsController");
+const commentsController = require("./controllers/commentsController");
+const userController = require("./controllers/usersController"); // 
+const articlesController = require("./controllers/articlesController");
+const forumController = require("./controllers/forumController");
+const profilesController = require("./controllers/profilesController");
 
-// /* - - - ROUTES - - - */
-router.use('/posts', postsController);
-router.use('/comments', commentsController);
-router.use('/articles', articlesController);
+// // Use router.use instead of app.use
+// app.use('/create-profile', createProfileController);
+
+/* - - - ROUTES - - - */
+
+app.use("/posts", postsController);
+app.use("/comments", commentsController);
+app.use("/users", userController);
+app.use("/articles", articlesController);
+app.use("/profiles", profilesController);
 
 // Define a route for the root path
-router.get('/', (req, res) => {
+app.get('/', (req, res) => {
   res.send('Hello, this is the root path!');
 });
 
-router.post('/create-user-profile', async (req, res) => {
+app.post('/create-user-profile', async (req, res) => {
   try {
     const { fname, lname, email, phone, city, homestate, profile_img, name, age, reasonForJoining } = req.body;
     const newUser = await createUser(fname, lname, email, phone, city, homestate, profile_img);
@@ -89,7 +94,7 @@ router.post('/create-user-profile', async (req, res) => {
   }
 });
 
-module.exports = { app, router };
+module.exports = { app };
 
 
 
