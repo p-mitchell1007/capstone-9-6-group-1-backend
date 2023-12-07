@@ -20,9 +20,9 @@ VALUES
 
 INSERT INTO comments ( user_id, post_id, comment_made, content)
 VALUES
-  ( 2, 1, '2023-11-02', 'You’re not alone! I went through the same stress during my pregnancy. Here are some tips that helped me...'),
-  ( 4, 3, '2023-11-03', 'I recommend Dr. Emily Johnson; she’s a fantastic therapist for postpartum depression.'),
-  ( 1, 4, '2023-11-05', 'Getting enough rest and support from your partner is crucial during this time.'),
+  ( 2, 1, '2023-11-02', `You're not alone! I went through the same stress during my pregnancy. Here are some tips that helped me...`),
+  ( 4, 3, '2023-11-03', `I recommend Dr. Emily Johnson; shes a fantastic therapist for postpartum depression.`,
+  ( 1, 4, '2023-11-05', `Getting enough rest and support from your partner is crucial during this time.`),
   ( 1, 5, '2023-11-05', 'Be calm and carry on!'),
   ( 2, 5, '2023-11-05', 'Try to avoid giving in to all the noise in your head.'),
   ( 4, 5, '2023-11-05', 'Try talking to someone you trust.'),
