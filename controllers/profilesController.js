@@ -1,12 +1,15 @@
 const express = require('express');
-const router = express.Router();
+const app = express.Router();
 
 const {
   getUserProfiles,
   // getUserById,
   // createUser,
 } = require('../queries/profilesQueries'); 
-router.get('/', async (req, res) => {
+
+app.get('/', async (req, res) => {
+
+
   const  userProfiles = await getUserProfiles();
 
   if (!Array.isArray(userProfiles)) {
@@ -18,4 +21,4 @@ router.get('/', async (req, res) => {
 
 
 
-module.exports = router;
+module.exports = app;
