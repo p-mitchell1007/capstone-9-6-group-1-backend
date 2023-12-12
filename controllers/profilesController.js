@@ -5,7 +5,7 @@ const {
   getUserProfiles,
   // getUserById,
   // createUser,
-} = require('../queries/ProfilesQueries'); 
+} = require('../queries/profilesQueries'); 
 router.get('/', async (req, res) => {
   const  userProfiles = await getUserProfiles();
 
