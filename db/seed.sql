@@ -18,15 +18,16 @@ VALUES
   ( 3, '2023-11-01', 'Coping Strategies for New Parents', 'Share your best coping strategies for dealing with lack of sleep and baby-related stress.'),
   ( 5, '2023-11-01', 'I Have Been There!', 'Sometimes you just have to deal with it as best you can.');
 
-INSERT INTO comments ( user_id, post_id, comment_made, content)
+INSERT INTO comments (user_id, post_id, comment_made, content)
 VALUES
-  ( 2, 1, '2023-11-02', `You're not alone! I went through the same stress during my pregnancy. Here are some tips that helped me...`),
-  ( 4, 3, '2023-11-03', `I recommend Dr. Emily Johnson; shes a fantastic therapist for postpartum depression.`,
-  ( 1, 4, '2023-11-05', `Getting enough rest and support from your partner is crucial during this time.`),
-  ( 1, 5, '2023-11-05', 'Be calm and carry on!'),
-  ( 2, 5, '2023-11-05', 'Try to avoid giving in to all the noise in your head.'),
-  ( 4, 5, '2023-11-05', 'Try talking to someone you trust.'),
-  ( 3, 2, '2023-11-06', 'I am a family counselor, and I can help with family-related issues as well. Feel free to reach out.');
+  (2, 1, '2023-11-02', 'You''re not alone! I went through the same stress during my pregnancy. Here are some tips that helped me...'),
+  (4, 3, '2023-11-03', 'I recommend Dr. Emily Johnson; she''s a fantastic therapist for postpartum depression.'),
+  (1, 4, '2023-11-05', 'Getting enough rest and support from your partner is crucial during this time.'),
+  (1, 5, '2023-11-05', 'Be calm and carry on!'),
+  (2, 5, '2023-11-05', 'Try to avoid giving in to all the noise in your head.'),
+  (4, 5, '2023-11-05', 'Try talking to someone you trust.'),
+  (3, 2, '2023-11-06', 'I am a family counselor, and I can help with family-related issues as well. Feel free to reach out.');
+
 
 INSERT INTO articles (title, author, creation_date, article_preview)
 VALUES
