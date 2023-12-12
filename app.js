@@ -13,7 +13,9 @@ const commentsController = require("./controllers/commentsController");
 const userController = require("./controllers/usersController"); // 
 const articlesController = require("./controllers/articlesController");
 
-app.use(cors());
+app.use(cors({
+  origin:"https://localhost:3000"
+}));
 app.use(express.json());
 app.use(morgan("dev"));
 
@@ -25,7 +27,7 @@ app.use("/users", userController);
 app.use("/articles", articlesController);
 
 app.get("/", (req, res) => {
-  return res.send("Welcome To Reflections");
+  res.send("Welcome To Reflections");
 });
 
 /* - - - 404 - - - */
