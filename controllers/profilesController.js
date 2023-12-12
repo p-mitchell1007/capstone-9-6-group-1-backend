@@ -6,7 +6,10 @@ const {
   // getUserById,
   // createUser,
 } = require('../queries/profilesQueries'); 
+
 app.get('/', async (req, res) => {
+
+
   const  userProfiles = await getUserProfiles();
 
   if (!Array.isArray(userProfiles)) {

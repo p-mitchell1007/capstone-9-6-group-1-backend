@@ -1,3 +1,7 @@
+-- //seed.sql
+
+
+
 \c reflections;
 
 INSERT INTO users (fname, lname, email, phone, city, homestate, password_hash, profile_img, created_at) VALUES
@@ -20,6 +24,7 @@ VALUES
 
 INSERT INTO comments (user_id, post_id, comment_made, content)
 VALUES
+
   (2, 1, '2023-11-02', 'You''re not alone! I went through the same stress during my pregnancy. Here are some tips that helped me...'),
   (4, 3, '2023-11-03', 'I recommend Dr. Emily Johnson; she''s a fantastic therapist for postpartum depression.'),
   (1, 4, '2023-11-05', 'Getting enough rest and support from your partner is crucial during this time.'),
@@ -27,6 +32,7 @@ VALUES
   (2, 5, '2023-11-05', 'Try to avoid giving in to all the noise in your head.'),
   (4, 5, '2023-11-05', 'Try talking to someone you trust.'),
   (3, 2, '2023-11-06', 'I am a family counselor, and I can help with family-related issues as well. Feel free to reach out.');
+
 
 
 INSERT INTO articles (title, author, creation_date, article_preview)
@@ -41,4 +47,13 @@ VALUES
   ( 1, '1998-12-25', 'Woman', 'Married', TRUE, '{3, 1}', '{"Redbook","O","Mademoiselle"}','{"oprah.com","https://www.womenhealth1.com/"}','{"The Climb","Girls Just Wanna Have Fun","I am Woman","You and Me Against The World"}','{"Out Of Africa","Sense and Sensibility"}','{"Knitting","Cooking","Arts and Crafts"}','USA', '10010', now()),
   ( 2, '1996-12-25', 'Woman', 'Married', TRUE, '{3, 3, 1}', '{"Redbook","O","Mademoiselle"}','{"oprah.com","https://www.womenandinfants.org/services/pregnancy/postpartum-health"}','{"The Climb","Girls Just Wanna Have Fun","I am Woman","You and Me Against The World"}','{"Mr. Wonderful","Eat, Pray, Love"}','{"Knitting","Cooking","Arts and Crafts"}', 'USA', '10010', now()),
   ( 3, '2002-09-17', 'Woman', 'Married', TRUE, '{1}', '{"Redbook","O","Mademoiselle"}','{"oprah.com","https://www.womenhealth1.com/"}','{"The Climb","Girls Just Wanna Have Fun","I am Woman","You and Me Against The World"}','{"Terms of Endearment","The Elephant Man"}','{"Knitting","Cooking","Arts and Crafts"}', 'USA', '10010',now());
+
+
+
+
+
+
+
+
+
 
