@@ -40,6 +40,7 @@ VALUES
   ( '6 Tips For Managing The 4th Trimester & Postpartum Depression', 'SydneyP', '2023-05-08', 'The journey of motherhood is a miraculous and life-changing experience. However, it can also bring forth unexpected challenges that can impact the well-being of both the mother and their newborn. One crucial yet often overlooked stage is the 4th trimester, where postpartum depression can emerge as a significant concern...'),
   ( 'Postpartum Depression', 'MyaC', '2023-07-15', 'Your body and mind go through many changes during and after pregnancy. If you feel sad, anxious, or overwhelmed...'),
   ( 'Postpartum Depression: Causes, Symptoms & Treatment', 'SaraN', '2022-10-17', 'Postpartum depression is a type of depression that happens after having a baby. It affects up to 15% of people...'),
+  ( 'First Poop After Giving Birth: What Postpartum Mums Should Expect', 'Bianchi Mendoza', '2022-10-17', '''Baby''s out, the hardest part is over.'' Most of us mums know that''s not true.  Aside from stepping into your new role as a parent, you also have to think about postpartum recover—such as the first poop after giving birth.'),
   ('What are the types of postpartum depression?', 'LucyH', '2022-12-12', 'There are three different types of postpartum mood disorders...');
 
 INSERT INTO profiles (user_id, dob, gender, marital_status, have_children, age_of_children, favorite_magazines, favorite_websites, favorite_songs, favorite_movies, favorite_activity, country, postal_code, creation_date)
