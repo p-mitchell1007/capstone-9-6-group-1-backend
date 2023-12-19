@@ -11,8 +11,6 @@ CREATE TABLE users (
   lname TEXT,
   email TEXT,
   phone VARCHAR(15),
-  city VARCHAR(50),
-  homestate VARCHAR(50),
   password_hash VARCHAR(255),
   profile_img TEXT,
   created_at TIMESTAMP DEFAULT now()
@@ -25,7 +23,8 @@ CREATE TABLE posts (
   user_id INTEGER REFERENCES users(id),
   post_made DATE,
   title TEXT,
-  content VARCHAR(300)
+  content VARCHAR(300),
+  url TEXT
 );
 
 DROP TABLE IF EXISTS comments;
@@ -38,14 +37,6 @@ CREATE TABLE comments (
 );
 
 
-DROP TABLE IF EXISTS articles;
-CREATE TABLE articles (
-    id SERIAL PRIMARY KEY,
-    title VARCHAR (255) NOT NULL,
-    author TEXT,
-    creation_date DATE,
-    article_preview TEXT
-);
 
 DROP TABLE IF EXISTS profiles;
 CREATE TABLE profiles (
@@ -68,6 +59,8 @@ CREATE TABLE profiles (
     favorite_movies TEXT[],
     -- favorite_activity is an array
     favorite_activity TEXT[],
+    city VARCHAR(50),
+    homestate VARCHAR(50),
     country TEXT,
     postal_code TEXT,
     creation_date DATE
