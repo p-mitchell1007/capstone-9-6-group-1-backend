@@ -25,7 +25,8 @@ CREATE TABLE posts (
   user_id INTEGER REFERENCES users(id),
   post_made DATE,
   title TEXT,
-  content VARCHAR(300)
+  content VARCHAR(300),
+  url TEXT
 );
 
 DROP TABLE IF EXISTS comments;
@@ -38,14 +39,6 @@ CREATE TABLE comments (
 );
 
 
-DROP TABLE IF EXISTS articles;
-CREATE TABLE articles (
-    id SERIAL PRIMARY KEY,
-    title VARCHAR (255) NOT NULL,
-    author TEXT,
-    creation_date DATE,
-    article_preview TEXT
-);
 
 DROP TABLE IF EXISTS profiles;
 CREATE TABLE profiles (

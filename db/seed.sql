@@ -34,20 +34,24 @@ VALUES
   (3, 2, '2023-11-06', 'I am a family counselor, and I can help with family-related issues as well. Feel free to reach out.');
 
 
+-- INSERT INTO articles (title, author, creation_date, article_preview)
+-- VALUES
+--   ( '6 Tips For Managing The 4th Trimester & Postpartum Depression', 'SydneyP', '2023-05-08', 'The journey of motherhood is a miraculous and life-changing experience. However, it can also bring forth unexpected challenges that can impact the well-being of both the mother and their newborn. One crucial yet often overlooked stage is the 4th trimester, where postpartum depression can emerge as a significant concern...'),
+--   ( 'Postpartum Depression', 'MyaC', '2023-07-15', 'Your body and mind go through many changes during and after pregnancy. If you feel sad, anxious, or overwhelmed...'),
+--   ( 'Postpartum Depression: Causes, Symptoms & Treatment', 'SaraN', '2022-10-17', 'Postpartum depression is a type of depression that happens after having a baby. It affects up to 15% of people...'),
+--   ( 'First Poop After Giving Birth: What Postpartum Mums Should Expect', 'Bianchi Mendoza', '2022-10-17', '''Baby''s out, the hardest part is over.'' Most of us mums know that''s not true.  Aside from stepping into your new role as a parent, you also have to think about postpartum recover—such as the first poop after giving birth.'),
+--   ('What are the types of postpartum depression?', 'LucyH', '2022-12-12', 'There are three different types of postpartum mood disorders...');
 
-INSERT INTO articles (title, author, creation_date, article_preview)
-VALUES
-  ( '6 Tips For Managing The 4th Trimester & Postpartum Depression', 'SydneyP', '2023-05-08', 'The journey of motherhood is a miraculous and life-changing experience. However, it can also bring forth unexpected challenges that can impact the well-being of both the mother and their newborn. One crucial yet often overlooked stage is the 4th trimester, where postpartum depression can emerge as a significant concern...'),
-  ( 'Postpartum Depression', 'MyaC', '2023-07-15', 'Your body and mind go through many changes during and after pregnancy. If you feel sad, anxious, or overwhelmed...'),
-  ( 'Postpartum Depression: Causes, Symptoms & Treatment', 'SaraN', '2022-10-17', 'Postpartum depression is a type of depression that happens after having a baby. It affects up to 15% of people...'),
-  ( 'First Poop After Giving Birth: What Postpartum Mums Should Expect', 'Bianchi Mendoza', '2022-10-17', '''Baby''s out, the hardest part is over.'' Most of us mums know that''s not true.  Aside from stepping into your new role as a parent, you also have to think about postpartum recover—such as the first poop after giving birth.'),
-  ('What are the types of postpartum depression?', 'LucyH', '2022-12-12', 'There are three different types of postpartum mood disorders...');
 
 INSERT INTO profiles (user_id, dob, gender, marital_status, have_children, age_of_children, favorite_magazines, favorite_websites, favorite_songs, favorite_movies, favorite_activity, country, postal_code, creation_date)
 VALUES
   ( 1, '1998-12-25', 'Woman', 'Married', TRUE, '{3, 1}', '{"Redbook","O","Mademoiselle"}','{"oprah.com","https://www.womenhealth1.com/"}','{"The Climb","Girls Just Wanna Have Fun","I am Woman","You and Me Against The World"}','{"Out Of Africa","Sense and Sensibility"}','{"Knitting","Cooking","Arts and Crafts"}','USA', '10010', now()),
   ( 2, '1996-12-25', 'Woman', 'Married', TRUE, '{3, 3, 1}', '{"Redbook","O","Mademoiselle"}','{"oprah.com","https://www.womenandinfants.org/services/pregnancy/postpartum-health"}','{"The Climb","Girls Just Wanna Have Fun","I am Woman","You and Me Against The World"}','{"Mr. Wonderful","Eat, Pray, Love"}','{"Knitting","Cooking","Arts and Crafts"}', 'USA', '10010', now()),
-  ( 3, '2002-09-17', 'Woman', 'Married', TRUE, '{1}', '{"Redbook","O","Mademoiselle"}','{"oprah.com","https://www.womenhealth1.com/"}','{"The Climb","Girls Just Wanna Have Fun","I am Woman","You and Me Against The World"}','{"Terms of Endearment","The Elephant Man"}','{"Knitting","Cooking","Arts and Crafts"}', 'USA', '10010',now());
+  ( 3, '2002-09-17', 'Woman', 'Married', TRUE, '{1}', '{"Redbook","O","Mademoiselle"}','{"oprah.com","https://www.womenhealth1.com/"}','{"The Climb","Girls Just Wanna Have Fun","I am Woman","You and Me Against The World"}','{"Terms of Endearment","The Elephant Man"}','{"Knitting","Cooking","Arts and Crafts"}', 'USA', '10010',now()),
+  (4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  (5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  (6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  (7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 
 
