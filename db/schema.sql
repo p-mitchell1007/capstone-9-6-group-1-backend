@@ -59,8 +59,6 @@ CREATE TABLE profiles (
     favorite_movies TEXT[],
     -- favorite_activity is an array
     favorite_activity TEXT[],
-    city VARCHAR(50),
-    homestate VARCHAR(50),
     country TEXT,
     postal_code TEXT,
     creation_date DATE
