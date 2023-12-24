@@ -63,3 +63,11 @@ CREATE TABLE profiles (
     postal_code TEXT,
     creation_date DATE
 );
+
+DROP TABLE IF EXISTS friends;
+CREATE TABLE friends (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id),
+    friend_id INTEGER,
+    created_at DATE
+);

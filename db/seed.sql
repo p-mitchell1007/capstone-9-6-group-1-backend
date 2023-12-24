@@ -5,13 +5,16 @@
 \c reflections;
 
 INSERT INTO users (fname, lname, email, phone, password_hash, profile_img, created_at) VALUES
-( 'Madhu', 'Sudan', 'madhus@reflections.com', '212-212-2120', 'Boxx Town', 'NY', 'abc123', 'https://madhu.seas.harvard.edu/img/mugshot-12.jpg', CURRENT_TIMESTAMP ),
-( 'John', 'Goodman', 'johng@reflections.com', '212-212-2121', 'Boxx Town', 'NY', 'abc132', 'https://avatars.githubusercontent.com/u/16713737?v=4', CURRENT_TIMESTAMP ),
-( 'Wes', 'Reid', 'wesr@reflections.com', '212-212-2123', 'Boxx Town', 'NY', 'abc312', 'https://avatars.githubusercontent.com/u/1316902?v=4', CURRENT_TIMESTAMP ),
-( 'Tammy', 'Wynett', 'wesr@reflections.com', '212-212-2124', 'Boxx Town', 'NY', 'abc312', 'https://avatars.githubusercontent.com/u/1316902?v=4', CURRENT_TIMESTAMP ),
-( 'Abbie', 'Normal', 'wesr@reflections.com', '212-212-2125', 'Boxx Town', 'NY', 'abc312', 'https://guardian.ng/wp-content/uploads/2018/11/o-MOTHER-AND-BABY-facebook.jpg', CURRENT_TIMESTAMP ),
-( 'Barbie', 'Myslak', 'wesr@reflections.com', '212-212-2126', 'Boxx Town', 'NY', 'abc312', 'https://avatars.githubusercontent.com/u/1316902?v=4', CURRENT_TIMESTAMP ),
-( 'Rachel', 'Feldman', 'rachelf@reflections.com', '212-212-2127', 'Boxx Town', 'NY', 'abc213', 'https://www.linkedin.com/in/rachel-f-3b7ab858/overlay/photo/', CURRENT_TIMESTAMP );
+( 'Madhu', 'Sudan', 'madhus@reflections.com', '212-212-2120', 'abc123', 'https://madhu.seas.harvard.edu/img/mugshot-12.jpg', CURRENT_TIMESTAMP ),
+( 'John', 'Goodman', 'johng@reflections.com', '212-212-2121', 'abc132', 'https://avatars.githubusercontent.com/u/16713737?v=4', CURRENT_TIMESTAMP ),
+( 'Wes', 'Reid', 'wesr@reflections.com', '212-212-2123', 'abc312', 'https://avatars.githubusercontent.com/u/1316902?v=4', CURRENT_TIMESTAMP ),
+( 'Tammy', 'Wynett', 'tammy@reflections.com', '212-212-2124', 'abc312', 'https://avatars.githubusercontent.com/u/1316902?v=4', CURRENT_TIMESTAMP ),
+( 'Abbie', 'Normal', 'abbie@reflections.com', '212-212-2125', 'abc312', 'https://guardian.ng/wp-content/uploads/2018/11/o-MOTHER-AND-BABY-facebook.jpg', CURRENT_TIMESTAMP ),
+( 'Barbie', 'Myslak', 'barbie@reflections.com', '212-212-2126', 'abc312', 'https://avatars.githubusercontent.com/u/1316902?v=4', CURRENT_TIMESTAMP ),
+( 'Rachel', 'Feldman', 'rachelf@reflections.com', '212-212-2127', 'abc213', 'https://www.linkedin.com/in/rachel-f-3b7ab858/overlay/photo/', CURRENT_TIMESTAMP ),
+( 'Anita', 'Franklyn', 'anita@reflections.com', '212-212-2127', 'abc213', 'https://www.linkedin.com/in/rachel-f-3b7ab858/overlay/photo/', CURRENT_TIMESTAMP ),
+( 'Angela', 'Franklyn', 'anita@reflections.com', '212-212-2127', 'abc213', 'https://www.linkedin.com/in/rachel-f-3b7ab858/overlay/photo/', CURRENT_TIMESTAMP ),
+( 'Janice', 'Walker', 'janicew@reflections.com', '212-212-2127', 'abc213', 'https://www.linkedin.com/in/rachel-f-3b7ab858/overlay/photo/', CURRENT_TIMESTAMP );
 
 
 INSERT INTO posts ( user_id, post_made, title, content)
@@ -51,14 +54,16 @@ VALUES
   (4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
   (5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
   (6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-  (7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+  (7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
-
-
-
-
-
-
-
+INSERT INTO friends (user_id, friend_id, created_at) VALUES 
+(1,2,now()),
+(1,3,now()),
+(1,5,now()),
+(1,9,now()),
+(3,9,now()),
+(3,4,now()),
+(3,5,now()),
+(3,6,now());
 
 
