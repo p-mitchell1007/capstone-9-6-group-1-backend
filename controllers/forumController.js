@@ -4,8 +4,8 @@ const router = express.Router();
 const {
   getForumPostsByUsers,
   getForumPostsByUser,
-  // getUserById,
-  // createUser,
+  getCommentsByPost,
+  
 } = require('../queries/forumQueries'); 
 router.get('/', async (req, res) => {
   const  forumPosts = await getForumPostsByUsers();
@@ -28,17 +28,18 @@ router.get('/:user_id', async (req, res) => {
     return res.json(user);
   }
 });
+router.get('/comments/:id', async (req, res) => {
+  const postId = req.params.id;
+  console.log("postId===>", postId)
+  const comments = await getCommentsByPost(postId);
 
-// router.post('/', async (req, res) => {
-//   const { fname, lname, email, phone, city, homestate, password_hash, profile_img } = req.body;
-//   const newUser = await createUser(fname, lname, email, phone, city, homestate, password_hash, profile_img);
+  if (comments instanceof Error) {
+    return res.status(404).json({ error: 'User not found' });
+  } else {
+    return res.json(comments);
+  }
+});
 
-//   if (newUser instanceof Error) {
-//     return res.status(500).json({ error: 'Error creating user' });
-//   } else {
-//     return res.status(201).json(newUser);
-//   }
-// });
 
 module.exports = router;
 

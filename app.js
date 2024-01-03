@@ -10,7 +10,7 @@ app.use(cors())
 // /* - - - CONTROLLERS - - - */
 const postsController = require("./controllers/postsController");
 const commentsController = require("./controllers/commentsController");
-const userController = require("./controllers/usersController"); // 
+const userController = require("./controllers/usersController");
 const articlesController = require("./controllers/articlesController");
 const forumController = require("./controllers/forumController");
 const profilesController = require("./controllers/profilesController");

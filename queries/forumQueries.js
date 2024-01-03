@@ -3,7 +3,7 @@ const db = require('../db/dbConfig.js');
 const getForumPostsByUsers = async () => {
   try {
     const forumPosts = await db.any( 
-      'SELECT users.id, fname, lname, email, phone, city, password_hash, created_at, posts.user_id, posts.post_made, posts.title, posts.content, comments.user_id, comments.comment_made, comments.content FROM users JOIN posts ON users.id = posts.user_id JOIN comments ON posts.id = comments.post_id'
+      'SELECT users.id, fname, lname, email, phone, password_hash, created_at, posts.user_id, posts.post_made, posts.title, posts.content, comments.user_id, comments.comment_made, comments.content FROM users JOIN posts ON users.id = posts.user_id JOIN comments ON posts.id = comments.post_id'
     );
     return forumPosts;
   } catch (error) {
@@ -17,6 +17,17 @@ const getForumPostsByUser = async (userId) => {
       'SELECT id, user_id, post_made, title, content FROM posts WHERE user_id = $1', userId
     );
     return forumPosts;
+  } catch (error) {
+    throw error;
+  }
+};
+
+const getCommentsByPost = async (postId) => {
+  try {
+    const postComments = await db.any(
+      'SELECT id, user_id, post_id, comment_made, content FROM posts WHERE post_id = $1', postId
+    );
+    return postComments;
   } catch (error) {
     throw error;
   }
@@ -50,5 +61,5 @@ const getForumPostsByUser = async (userId) => {
 module.exports = {
   getForumPostsByUsers,
   getForumPostsByUser,
-  
+  getCommentsByPost
 };
