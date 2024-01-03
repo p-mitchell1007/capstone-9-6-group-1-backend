@@ -46,18 +46,15 @@ VALUES
 --   ('What are the types of postpartum depression?', 'LucyH', '2022-12-12', 'There are three different types of postpartum mood disorders...');
 
 
-INSERT INTO profiles (user_id, dob, gender, marital_status, have_children, age_of_children, favorite_magazines, favorite_websites, favorite_songs, favorite_movies, favorite_activity, city, homestate, country, postal_code, creation_date)
+INSERT INTO profiles (user_id, dob, gender, marital_status, have_children, age_of_children, favorite_magazines, favorite_websites, favorite_songs, favorite_movies, favorite_activity, country, postal_code, creation_date)
 VALUES
-  ( 1, '1998-12-25', 'Woman', 'Married', TRUE, '{3, 1}', '{"Redbook","O","Mademoiselle"}','{"oprah.com","https://www.womenhealth1.com/"}','{"The Climb","Girls Just Wanna Have Fun","I am Woman","You and Me Against The World"}','{"Out Of Africa","Sense and Sensibility"}','{"Knitting","Cooking","Arts and Crafts"}','Boxx Town', 'NY', 'USA', '10010', NULL),
-  ( 2, '1996-12-25', 'Woman', 'Married', TRUE, '{3, 3, 1}', '{"Redbook","O","Mademoiselle"}','{"oprah.com","https://www.womenandinfants.org/services/pregnancy/postpartum-health"}','{"The Climb","Girls Just Wanna Have Fun","I am Woman","You and Me Against The World"}','{"Mr. Wonderful","Eat, Pray, Love"}','{"Knitting","Cooking","Arts and Crafts"}', 'Boxx Town', 'NY', 'USA', '10010', NULL),
-  ( 3, '2002-09-17', 'Woman', 'Married', TRUE, '{1}', '{"Redbook","O","Mademoiselle"}','{"oprah.com","https://www.womenhealth1.com/"}','{"The Climb","Girls Just Wanna Have Fun","I am Woman","You and Me Against The World"}','{"Terms of Endearment","The Elephant Man"}','{"Knitting","Cooking","Arts and Crafts"}', 'Boxx Town', 'NY', 'USA', '10010',NULL),
-  (4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-  (5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-  (6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-  (7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-  (8, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-  (9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-  (10, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+  ( 1, '1998-12-25', 'Woman', 'Married', TRUE, '{3, 1}', '{"Redbook","O","Mademoiselle"}','{"oprah.com","https://www.womenhealth1.com/"}','{"The Climb","Girls Just Wanna Have Fun","I am Woman","You and Me Against The World"}','{"Out Of Africa","Sense and Sensibility"}','{"Knitting","Cooking","Arts and Crafts"}','USA', '10010', now()),
+  ( 2, '1996-12-25', 'Woman', 'Married', TRUE, '{3, 3, 1}', '{"Redbook","O","Mademoiselle"}','{"oprah.com","https://www.womenandinfants.org/services/pregnancy/postpartum-health"}','{"The Climb","Girls Just Wanna Have Fun","I am Woman","You and Me Against The World"}','{"Mr. Wonderful","Eat, Pray, Love"}','{"Knitting","Cooking","Arts and Crafts"}', 'USA', '10010', now()),
+  ( 3, '2002-09-17', 'Woman', 'Married', TRUE, '{1}', '{"Redbook","O","Mademoiselle"}','{"oprah.com","https://www.womenhealth1.com/"}','{"The Climb","Girls Just Wanna Have Fun","I am Woman","You and Me Against The World"}','{"Terms of Endearment","The Elephant Man"}','{"Knitting","Cooking","Arts and Crafts"}', 'USA', '10010',now()),
+  (4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  (5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  (6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  (7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 INSERT INTO friends (user_id, friend_id, created_at) VALUES 
 (1,2,now()),
