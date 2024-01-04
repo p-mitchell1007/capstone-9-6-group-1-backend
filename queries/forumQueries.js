@@ -1,22 +1,36 @@
 const db = require('../db/dbConfig.js'); 
 
-const getForumPostsByUsers = async () => {
+const getForumPostsByUsers = async (userId = 1) => {
   try {
-    const forumPosts = await db.any( 
-      'SELECT users.id, fname, lname, email, phone, city, password_hash, created_at, posts.user_id, posts.post_made, posts.title, posts.content, comments.user_id, comments.comment_made, comments.content FROM users JOIN posts ON users.id = posts.user_id JOIN comments ON posts.id = comments.post_id'
+    const forumPostByUsers = await db.any( 
+      'SELECT users.id, fname, lname, email, phone, password_hash, created_at, posts.user_id, posts.post_made, posts.title, posts.content, comments.post_id, comments.comment_made, comments.content FROM users JOIN posts ON users.id = posts.user_id JOIN comments ON comments.post_id = posts.id WHERE users.id = $1', 5 
     );
-    return forumPosts;
+    return forumPostByUsers;
   } catch (error) {
     throw error;
   }
 };
 
-const getForumPostsByUser = async (userId) => {
+const getForumPostsByUser = async (userId = 1) => {
   try {
-    const forumPosts = await db.any(
-      'SELECT id, user_id, post_made, title, content FROM posts WHERE user_id = $1', userId
+    const forumPostByUser = await db.any(
+      'SELECT users.id, fname, lname, email, phone, password_hash, profile_img, posts.id, posts.user_id, posts.title, posts.content, comments.id, comments.content FROM users JOIN posts ON users.id = posts.user_id JOIN comments ON comments.post_id = posts.id WHERE users.id = $1', userId
     );
-    return forumPosts;
+    // const forumPosts = await db.any(
+    //   'SELECT id, user_id, post_made, title, content FROM posts WHERE user_id = $1', userId
+    // );
+    return forumPostByUser;
+  } catch (error) {
+    throw error;
+  }
+};
+
+const getCommentsByPost = async (postId) => {
+  try {
+    const postComments = await db.any(
+      'SELECT id, user_id, post_id, comment_made, content FROM posts WHERE post_id = $1', postId
+    );
+    return postComments;
   } catch (error) {
     throw error;
   }
@@ -50,5 +64,5 @@ const getForumPostsByUser = async (userId) => {
 module.exports = {
   getForumPostsByUsers,
   getForumPostsByUser,
-  
+  getCommentsByPost
 };
