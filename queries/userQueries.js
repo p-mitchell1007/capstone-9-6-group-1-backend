@@ -1,3 +1,6 @@
+
+// userQueries.js
+
 const db = require('../db/dbConfig.js');
 
 const getAllUsers = async () => {
@@ -20,15 +23,36 @@ const getUserById = async (userId) => {
   }
 };
 
+
+
+
+const isEmailAvailable = async (email) => {
+  try {
+    const existingUser = await db.oneOrNone('SELECT * FROM users WHERE email = $1', email);
+    return !existingUser; // Return true if email is available, false if already exists
+  } catch (error) {
+    console.error('Error in isEmailAvailable:', error);
+    return false; // Assume not available in case of an error
+  }
+};
+
 const createUser = async (firstName, lastName = '', email, phone = '', city = '', homestate = '', profile_img = '') => {
   try {
+    const emailAvailable = await isEmailAvailable(email);
+
+    if (!emailAvailable) {
+      return { error: 'Email is already in use.' };
+    }
+
     const newUser = await db.one('INSERT INTO users (fname, lname, email, phone, city, homestate, profile_img) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id', [firstName, lastName, email, phone, city, homestate, profile_img]);
     return newUser;
   } catch (error) {
     console.error('Error in createUser:', error);
-    return null;
+    return { error: 'Server Error. Please Try Again.' };
   }
 };
+
+
 
 const updateUser = async (userId, firstName, lastName, email, phone, city, homestate, profile_img) => {
   try {
@@ -58,6 +82,7 @@ const createUserProfile = async (name, age, reasonForJoining) => {
   }
 };
 
+
 module.exports = {
   getAllUsers,
   getUserById,
@@ -66,5 +91,6 @@ module.exports = {
   deleteUser,
   createUserProfile,
 };
+
 
 
