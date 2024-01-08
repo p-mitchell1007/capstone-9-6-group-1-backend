@@ -1,10 +1,13 @@
 const db = require('../db/dbConfig.js'); 
 
-const getForumPostsByUsers = async (userId = 1) => {
+const getForumPostsByUsers = async () => {
   try {
     const forumPostByUsers = await db.any( 
-      'SELECT users.id, fname, lname, email, phone, password_hash, created_at, posts.user_id, posts.post_made, posts.title, posts.content, comments.post_id, comments.comment_made, comments.content FROM users JOIN posts ON users.id = posts.user_id JOIN comments ON comments.post_id = posts.id WHERE users.id = $1', 5 
+      'SELECT users.id, fname, lname, email, phone, password_hash, created_at, posts.user_id, posts.post_made, posts.title, posts.content, comments.post_id, comments.comment_made, comments.content FROM users JOIN posts ON users.id = posts.user_id JOIN comments ON comments.post_id = posts.id'
     );
+    // const forumPostByUsers = await db.any( 
+    //   'SELECT users.id, fname, lname, email, phone, password_hash, created_at, posts.user_id, posts.post_made, posts.title, posts.content, comments.post_id, comments.comment_made, comments.content FROM users JOIN posts ON users.id = posts.user_id JOIN comments ON comments.post_id = posts.id WHERE users.id = $1', 5 
+    // );
     return forumPostByUsers;
   } catch (error) {
     throw error;
@@ -25,10 +28,36 @@ const getForumPostsByUser = async (userId = 1) => {
   }
 };
 
-const getCommentsByPost = async (postId) => {
+/* * * * 
+const getCurrentUser = async (userId = 5) => {
+  try {
+    const currentUser = await db.one(
+      // 'SELECT users.id, fname, lname, email, phone, password_hash, profile_img FROM users WHERE users.id = $1', userId
+      'SELECT * FROM users WHERE users.id = $1', userId
+    );
+   
+    return currentUser;
+  } catch (error) {
+    throw error;
+  }
+};
+const getUserPosts = async (userId = 5) => {
+  try {
+    const forumPostByUser = await db.any(
+      'SELECT * FROM posts WHERE posts.user_id = $1', userId
+      // 'SELECT posts.id, posts.user_id, posts.title, posts.content FROM posts WHERE posts.user_id = $1', userId
+    );
+   
+    return forumPostByUser;
+  } catch (error) {
+    throw error;
+  }
+};
+
+const getPostComments = async (postId) => {
   try {
     const postComments = await db.any(
-      'SELECT id, user_id, post_id, comment_made, content FROM posts WHERE post_id = $1', postId
+      'SELECT id, post_id, comment_made, content FROM comments WHERE comments.post_id = $1', postId
     );
     return postComments;
   } catch (error) {
@@ -60,9 +89,11 @@ const getCommentsByPost = async (postId) => {
 //     throw error;
 //   }
 // };
-
+*/
 module.exports = {
   getForumPostsByUsers,
   getForumPostsByUser,
-  getCommentsByPost
+  // getCurrentUser,
+  // getUserPosts,
+  // getPostComments
 };

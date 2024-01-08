@@ -20,7 +20,7 @@ CREATE TABLE users (
 DROP TABLE IF EXISTS posts;
 CREATE TABLE posts (
   id SERIAL PRIMARY KEY,
-  user_id INTEGER REFERENCES users(id),
+  user_id INTEGER,
   post_made DATE,
   title TEXT,
   content VARCHAR(300),
@@ -30,8 +30,8 @@ CREATE TABLE posts (
 DROP TABLE IF EXISTS comments;
 CREATE TABLE comments (
   id SERIAL PRIMARY KEY,
-  user_id INTEGER REFERENCES users(id),
-  post_id INTEGER REFERENCES posts(id),
+  user_id,
+  post_id,
   comment_made DATE,
   content VARCHAR(300)
 );
