@@ -21,7 +21,7 @@ DROP TABLE IF EXISTS posts;
 CREATE TABLE posts (
   id SERIAL PRIMARY KEY,
   user_id INTEGER,
-  post_made DATE,
+  post_made TIMESTAMP DEFAULT now(),
   title TEXT,
   content VARCHAR(300),
   url TEXT
@@ -32,7 +32,7 @@ CREATE TABLE comments (
   id SERIAL PRIMARY KEY,
   user_id INT,
   post_id INT,
-  comment_made DATE,
+  comment_made TIMESTAMP DEFAULT now(),
   content TEXT
 );
 
