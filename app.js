@@ -12,7 +12,7 @@ app.use(express.json());
 // Controllers
 const postsController = require("./controllers/postsController");
 const commentsController = require("./controllers/commentsController");
-const userController = require("./controllers/usersController"); // 
+const usersController = require("./controllers/usersController");
 const articlesController = require("./controllers/articlesController");
 const forumController = require("./controllers/forumController");
 const profilesController = require("./controllers/profilesController");
