@@ -4,7 +4,7 @@ const router = express.Router();
 const {
     getAllComments,
     getCommentsByPostId,
-    addComment,
+    createComment,
 } = require('../queries/commentsQueries');
 
 /* displays the comments for specific post. */
@@ -34,8 +34,8 @@ router.post('/:post_id', async (req, res) => {
         return res.status(400).json({ Error: 'Missing required fields.' });
     }
 
-    try {
-        const newComment = await addComment(post_id, user_id, comment_made, content);
+    try { 
+        const newComment = await createComment(user_id, post_id, content, comment_made);
 
         if (newComment) {
             return res.status(201).json(newComment);

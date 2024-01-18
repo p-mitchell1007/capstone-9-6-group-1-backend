@@ -27,9 +27,9 @@ const getCommentById = async (commentId) => {
   }
 };
 
-const createComment = async (text, postId) => {
+const createComment = async (userId, postId, content, commentMade) => {
   try {
-    const newComment = await db.one('INSERT INTO comments (user_id, post_id, content) VALUES ($2, $3, $4) RETURNING *', [text, postId]);
+    const newComment = await db.one('INSERT INTO comments (user_id, post_id, content, comment_made) VALUES ($1, $2, $3, $4) RETURNING *', [userId, postId, content, commentMade]);
     return newComment;
   } catch (error) {
     throw error;
